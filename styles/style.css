@@ -62,7 +62,7 @@ ul, li {
     justify-content: space-between;
 }
 
-.left-side-top-header span {
+.left-side-top-header span:first-child {
     text-transform: uppercase;
     font-weight: 600;
     text-decoration: underline;
@@ -76,6 +76,13 @@ ul, li {
     height: 42px;
     border-radius: 3px;
     cursor: pointer;
+    transition: 0.5s ease;
+    border: 1px solid #FFE8BD;
+}
+
+.active:hover {
+    border: 1px solid #FFAF1E;
+    transition: 0.5s ease;
 }
 
 .enter {
@@ -86,6 +93,13 @@ ul, li {
     width: 80px;
     border-radius: 3px;
     cursor: pointer;
+    border: 1px solid transparent;
+}
+
+.enter:hover {
+    border: 1px solid #FFAF1E;
+    transition: 0.5s ease;
+    background-color: #FFE8BD;
 }
 
 .enter svg {
@@ -110,6 +124,7 @@ ul, li {
     text-transform: uppercase;
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 
 .logo img {
@@ -133,6 +148,12 @@ ul, li {
     justify-content: center;
     border-radius: 3px;
     cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.basket:hover {
+    background-color: #FFE8BD;
+    transition: 0.5s ease;
 }
 
 .basket img {
@@ -160,6 +181,16 @@ nav ul li a {
     font-size: 12px;
     text-transform: uppercase;
     color: #333333;
+    transition: 0.5s ease;
+    padding: 8px 10px;
+
+}
+
+nav ul li a:hover {
+    /*color: white;*/
+    transition: 0.5s ease;
+    background-color: #FFE8BD;
+    border-radius: 5px;
 }
 
 .search {
@@ -379,7 +410,7 @@ nav ul li a {
 }
 
 .left-side-map img {
-    width: 447px;
+    max-width: 447px;
 }
 
 .left-side-map-img img {
@@ -407,7 +438,7 @@ nav ul li a {
 
 .right-side-map-img ul li {
     padding-left: 26px;
-    margin-bottom: 10px;
+    margin-bottom: 6px;
 }
 
 .right-side-map-img h3 {
@@ -428,5 +459,178 @@ nav ul li a {
     color: #333333;
 }
 
+@media screen and (max-width: 1050px) {
+    .wrapper-maps {
+        flex-wrap: wrap;
+    }
+
+    .left-side-map {
+        width: 100%;
+    }
+
+    .left-side-map img {
+        width: 1200px;
+        max-width: 100%;
+    }
+
+    .right-side-map-img ul li {
+        margin-bottom: 14px;
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .wrapper-cards-brands {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .card-product:first-child {
+        width: 50%;
+    }
+
+    .card-product:nth-child(2) {
+        width: calc(50% - 34px);
+    }
+
+    .products .container {
+        gap: 25px;
+    }
+
+    nav ul li:last-child {
+        display: none;
+    }
+
+    .card-model-car {
+        padding: 0 40px;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    nav ul li:nth-child(5) {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .left-side-top-header span:nth-child(2) {
+        display: none;
+    }
+
+    .products .container {
+        gap: 20px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .card-product:first-child {
+        width: 100%;
+    }
+
+    .card-product:nth-child(2) {
+        width: 100%;
+    }
+
+    .card-product:nth-child(3), .card-product:nth-child(4), .card-product:nth-child(5) {
+        width: 100%;
+    }
+
+    .left-side-map-img {
+        display: flex;
+    }
+
+    .right-side-map {
+        flex-wrap: wrap;
+    }
+
+    .left-side-map-img {
+        width: 100%;
+        gap: 10px;
+        justify-content: space-between;
+    }
+
+    .left-side-map-img img {
+        width: 45%;
+        height: 180px;
+        margin-bottom: 20px;
+        margin-right: 0;
+
+    }
+
+    .left-side-map-img img:nth-child(2) {
+        margin-right: 0;
+    }
+
+    nav {
+        margin: 0;
+    }
+
+    nav ul li a {
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .left-side-map-img {
+        display: none;
+    }
+
+    .right-side-map-img button {
+        display: none;
+    }
+
+    .right-side-map-img h3 {
+        text-align: center;
+    }
+
+    nav ul li:nth-child(4) {
+        display: none;
+    }
+
+    .box-contact-information {
+        flex-wrap: wrap;
+    }
+
+    .box-contact-information .address {
+        margin-bottom: 8px;
+    }
+
+    .active {
+        width: 100px;
+    }
+
+    .enter {
+        width: 70px;
+    }
+
+    .right-side-map-img ul li {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .wrapper-search-block .title {
+        margin-right: 10px;
+    }
+
+    .right-side-top-header .active {
+        width: 100px;
+    }
+
+    .right-side-top-header .enter {
+        width: 70px;
+    }
+
+    .left-side-top-header span {
+        font-size: 10px;
+    }
+
+    .card-model-car {
+        width: 100%;
+    }
+
+    .right-side-map-img ul li {
+        padding-left: 0;
+    }
+}
 
 
